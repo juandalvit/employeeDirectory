@@ -1,23 +1,11 @@
-<html>
-<head>
-<script src="css/source-sans-pro.js"></script>
-<link href="css/styles.css" rel="stylesheet">
-</head>
-
-<body>
-
-<script id="home-tpl" type="text/x-handlebars-template">
-    <div class='header'><h1>Home</h1></div>
-    <div class='search-bar'><input class='search-key' type="search"/></div>
-    <div class="scroll"><ul class='employee-list'></ul></div>
-</script>
-
-<script id="employee-li-tpl" type="text/x-handlebars-template">
-    {{#.}}
-    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
-    {{/.}}
-</script>
-
+<!doctype html>
+<html lang="en">
+ 
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+<link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+<script src="lib/onsen/js/angular/angular.js"></script>
+<script src="lib/onsen/js/onsenui.js"></script>
 
 <script src="lib/iscroll.js"></script>
 <script src="lib/handlebars.js"></script>
@@ -26,6 +14,175 @@
 <script src="js/storage/websql-store.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/main.js"></script>
+
+
+<script>
+  ons.bootstrap();
+  ons.ready(function() {
+    // Add another Onsen UI element
+    var content = document.getElementById("#my-content");
+    content.innerHTML="<ons-button>Another Button</ons-button>";
+    ons.compile(content);
+  });
+</script>
+
+
+</head>
+
+
+<platform name="ios">
+    <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
+    <splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
+    <splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
+    <splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+    <splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
+    <splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+    <splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
+    <splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
+    <splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
+    <splash src="res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242"/>
+</platform>
+<preference name="SplashScreenDelay" value="10000" />
+
+<body>
+
+
+
+<div class="navigation-bar">
+  <div class="navigation-bar__left">
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+    DATOS
+    </span>
+  </div>
+
+  <div class="navigation-bar__center">
+  </div>
+
+  <div class="navigation-bar__right">
+    <span class="toolbar-button--quiet navigation-bar__line-height">Buscar</span>
+  </div>
+</div>
+
+
+
+<ul class="list" style="margin-top: 16%;">
+  <li class="list__item list__item--chevron">
+    Pais
+  </li>
+</ul>
+
+
+
+<ul class="list" style="margin-top: 16%;">
+  <li class="list__item list__item--chevron">
+    Jerarquia
+  </li>
+</ul>
+  
+  
+  
+<ul class="list" style="margin-top: 16%;">
+  <li class="list__item list__item--chevron">
+    Area
+  </li>
+</ul> 
+  
+
+<div style="margin-top: 16%;">
+<ons-list class="range-list">
+        <ons-list-item>
+          <ons-row>
+            <ons-col width="40px">
+         		Junior
+            </ons-col>
+            <ons-col class="range-wrapper">
+              <input type="range" value="10" class="range">
+            </ons-col>
+            <ons-col width="40px" style="margin-right: 1%;">
+              Senior
+            </ons-col>
+          </ons-row>
+        </ons-list-item></div>
+
+<div style="margin-top: 16%; margin-left: 5%; margin-right: 5%; ">
+	<button class="button--large--cta" >SIGUIENTE</button>
+</div>
+
+ <ons-template id="page.html">
+      <ons-toolbar>
+        <div class="center">List with Mini Pictures</div>
+      </ons-toolbar>
+
+      <ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <div class="list-item-left">
+            <img src="images/4548488065_dae90277db_q.jpg" class="avator">
+          </div>
+          <div class="list-item-right">
+            <div class="list-item-content">
+              <div class="name">Daniel
+                <span class="lucent">@Danny</span>
+              </div>
+
+              <span class="desc">Hi, how are you? Glad to hear you are interested in our project.</span>
+            </div>
+          </div>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <div class="list-item-left">
+            <img src="images/3936883765_39121dcab5_q.jpg" class="avator">
+          </div>
+          <div class="list-item-right">
+            <div class="list-item-content">
+              <div class="name">John</div>
+              <span class="desc">I am a teacher at a elementary school.</span>
+            </div>
+          </div>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <div class="list-item-left">
+            <img src="images/5388738458_ea9fd2a7d7_q.jpg" class="avator">
+          </div>
+          <div class="list-item-right">
+            <div class="list-item-content">
+              <div class="name">Lucy</div>
+
+              <span class="desc">Hello, nice meeting you <i class="fa fa-meh-o" style="color: orangered;"></i></span>
+            </div>
+          </div>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="list-item-container">
+          <div class="list-item-left">
+            <img src="images/3152983303_4c0fd3140b_q.jpg" class="avator">
+          </div>
+          <div class="list-item-right">
+            <div class="list-item-content">
+              <div class="name">Elizabeth
+                <span class="lucent">@Elizabeth</span>
+              </div>
+              <span class="desc"><ons-icon icon="fa-phone" fixed-width="false" size="13px"></ons-icon> 1-800-123-4567</span>
+              <br>
+              <span class="desc">Please call me when you're ready.</span>
+            </div>
+          </div>
+        </ons-list-item>
+      </ons-list>
+
+    </ons-template>
+
+<script id="employee-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
+    {{/.}}
+</script>
+
+
+
+
 
 
 </body>
